@@ -4,8 +4,8 @@ import { signupSuccess, signupError } from "./signupAction";
 import { Link, useNavigate } from "react-router-dom";
 import "./signup.css";
 import toast from 'react-hot-toast'
-// const BASE_URL = process.env.REACT_APP_BACKEND_URL; 
-const BASE_URL = "https://collaborativecoding-server.vercel.app"
+const BASE_URL = process.env.REACT_APP_BACKEND_URL; 
+// const BASE_URL = "https://collaborativecoding-server.vercel.app"
 ; 
 
 function Signup() {
