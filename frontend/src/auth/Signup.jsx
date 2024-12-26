@@ -56,14 +56,16 @@ function Signup() {
       });
         
       const data = await response.json();
-
+      if (!response.ok) {
+      console.log(response.ok);
+       }
       if (response.ok) {
         dispatch(signupSuccess(data));
         toast.success("Signup verification code sent successfully!");
         navigate("/api/verify-email", { state: { email: formData.email } });
       } else {
         dispatch(signupError(data.message || "Signup failed."));
-        setStatus(data.message || "Signup failed")
+        setStatus(data.message || "Signup failed yaa")
         setSuccess(true)
         toast.error(data.message || "An error occurred.");
       }
