@@ -1,0 +1,223 @@
+                .homePage {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    height: 100vh;
+                    flex-direction: column;
+                }
+                
+                .form {
+                    background-color: white;
+                    color: black;
+                    border-radius: 10px;
+                    width: 400px;
+                    max-width: 90%;
+                    padding: 20px;
+                }
+                
+                .footer {
+                    position: fixed;
+                    bottom: 0;
+                }
+                
+                .footer a {
+                    color: blue;
+                }
+                
+                .input {
+                    display: flex;
+                    flex-direction: column;
+                    padding-bottom: 10px;
+                }
+                
+                .label {
+                    margin-top: 0px;
+                }
+                
+                .input-box {
+                    padding: 5px;
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    border: none;
+                }
+                
+                .btn {
+                    background-color: rgb(75, 111, 219);
+                    border: none;
+                    border-radius: 3px;
+                    color: white;
+                    padding: 5px;
+                    font-weight: bold;
+                }
+                
+                .mainWrap {
+                    display: grid;
+                    grid-template-columns: 230px 1fr;
+                    height: 100vh;
+                }
+                
+                .aside {
+                    background: #1c1e29;
+                    padding: 16px;
+                    color: #fff;
+                    display: flex;
+                    height: 100vh;
+                    flex-direction: column;
+                }
+                
+                .asideInner {
+                    flex: 1;
+                }
+                
+                .clientList {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+                
+                .client {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    font-weight: bold;
+                }
+                
+                .userName {
+                    margin-top: 10px;
+                }
+                
+                .logo {
+                    border-bottom: 1px solid #424242;
+                    padding-bottom: 10px;
+                }
+                
+                .logoImage {
+                    height: 60px;
+                }
+                
+                .leaveBtn {
+                    margin-top: 10px;
+                    background-color: rgb(240, 28, 28);
+                }
+                
+                .joinBtn:hover {
+                    background: rgb(122, 145, 216);
+                }
+                
+                .leaveBtn:hover {
+                    background: rgb(203, 85, 85);
+                }
+                
+                .copyBtn {
+                    background: white;
+                    color: black;
+                }
+                
+                .CodeMirror {
+                    height: calc(100vh);
+                    font-size: 15px;
+                    line-height: 1.6;
+                    padding-top: 15px;
+                    padding-right: 10px;
+                }
+                
+                .output {
+                    background-color: white;
+                }
+                
+                .editor {
+                    /* height: 100vh;
+                    background-color: #2a2c3a; */
+                    width: 150%;
+                    height: 50%;
+                }
+                
+                .runBtn {
+                    width: 100px;
+                    height: 40px;
+                    margin-right: 20px;
+                }
+                
+                .runner {
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    background-color: rgba(0, 0, 0, 0.8);
+                    z-index: 100;
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                .runner {
+                    height: 800px;
+                    /* Sets the height to 800px */
+                    width: 300px;
+                    /* Sets the width to 300px */
+                    overflow: hidden;
+                    /* Ensures content doesn't overflow */
+                    background-color: #f0f0f0;
+                    /* Optional: for visual debugging */
+                    border: 1px solid #ccc;
+                    /* Optional: adds a border */
+                    /* Ensures padding and border are included in dimensions */
+                }
+                
+                .container1 {
+                    height: 200px;
+                    width: 690px;
+                    background-color: #1c1e29;
+                    z-index: 10;
+                }
+                /* Ensure the inner content fits within the container */
+                
+                .above {
+                    height: 100%;
+                    width: 100%;
+                }
+                
+                .g-col-12 {
+                    height: 100%;
+                    width: 100%;
+                }
+                /* Optional: Adjust the video and inner elements for scaling */
+                
+                video {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+                
+                .D9WLyEQaARfWqCTyVrpU {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 50%;
+                }
+                
+                .pOvRwHj19chJGkgemUH3 {
+                    /* padding: 10px; */
+                }
+                
+                .b1CJxMvQdas9l4lGoyfA button {
+                    padding: 10px;
+                    font-size: 14px;
+                    cursor: pointer;
+                }
+                
+                .realTimeEditor {
+                    padding: 10px;
+                }
+                
+                .navbar a {
+                    text-decoration: none;
+                    color: black;
+                    padding: 10px 15px;
+                    transition: background-color 0.3s, color 0.3s;
+                }
+                
+                .navbar a:hover {
+                    background-color: #1d1d1e;
+                    color: white;
+                    border-radius: 5px;
+                }
