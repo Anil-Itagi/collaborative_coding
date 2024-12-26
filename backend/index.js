@@ -12,12 +12,14 @@ const connectDB = require('./db/connectDB.js');
 dotenv.config();
 app.use(cookieParser());
 
+const FRONTEND_URL = process.env.FRONTEND_URL;
+
 const { Server } = require('socket.io');
 const ACTIONS = require('./Actions.js');
 
 // cors
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: FRONTEND_URL,
     credentials: true,
 }));
 
@@ -25,7 +27,7 @@ app.use(cors({
 const server = http.createServer(app); // Create HTTP server
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000", // Replace with your frontend URL
+        origin: FRONTEND_URL, // Replace with your frontend URL
         methods: ["GET", "POST"],
     },
 });
@@ -137,6 +139,7 @@ io.on('connection', (socket) => {
 
 app.use(express.json()) // allows us to inconing reque fiorm json
 app.use(cookieParser());
+
 app.use("/api", router);
 
 server.listen(PORT, () => {

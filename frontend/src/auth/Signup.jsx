@@ -4,7 +4,9 @@ import { signupSuccess, signupError } from "./signupAction";
 import { Link, useNavigate } from "react-router-dom";
 import "./signup.css";
 import toast from 'react-hot-toast'
-const BASE_URL = process.env.REACT_APP_BACKEND_URL; 
+// const BASE_URL = process.env.REACT_APP_BACKEND_URL; 
+const BASE_URL = "https://collaborativecoding-server.vercel.app"
+; 
 
 function Signup() {
   const [status, setStatus] = useState("");
@@ -52,7 +54,7 @@ function Signup() {
         },
         body: JSON.stringify(formData),
       });
-
+        
       const data = await response.json();
 
       if (response.ok) {
@@ -67,7 +69,7 @@ function Signup() {
       }
     } catch (error) {
       console.error("Error:", error);
-      setStatus("data.message || Signup failed")
+      setStatus("Signup failed",error)
       setSuccess(true)
       dispatch(signupError(error.message || "Unexpected error occurred."));
       toast.error("An unexpected error occurred. Please try again.");
