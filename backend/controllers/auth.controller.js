@@ -13,6 +13,8 @@ const {
 } = require('../mailnoder/emails.js')
 
 const BASE_FRONTED_URL = process.env.FRONTEND_URL;
+
+
 const signup = async(req, res) => {
     const { email, password, name } = req.body;
     try {

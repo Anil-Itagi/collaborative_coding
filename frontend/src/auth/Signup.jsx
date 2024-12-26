@@ -46,7 +46,7 @@ function Signup() {
 
     try {
       //dispatch(loader()); // Show loader
-
+       console.log(BASE_URL);
       const response = await fetch(`${BASE_URL}/api/signup`, {
         method: "POST",
         headers: {
@@ -56,6 +56,7 @@ function Signup() {
       });
         
       const data = await response.json();
+      console.log(data);
       if (!response.ok) {
       console.log(response.ok);
        }
