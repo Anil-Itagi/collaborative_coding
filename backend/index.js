@@ -44,8 +44,8 @@ const PORT = process.env.PORT || 4000;
 
 
 app.post('/run-code', (req, res) => {
-    const { code } = req.body;
 
+    const { code } = req.body;
     if (!code) {
         return res.status(400).send({ error: 'No code provided' });
     }
