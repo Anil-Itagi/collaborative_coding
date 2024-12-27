@@ -63,7 +63,13 @@ function Signup() {
     //   console.error(thrown);
     // }
       // });
-      const response = await axios.post(`${BASE_URL}/api/signup`,formData);
+      var response = {};
+      try {
+         response = await axios.post(`${BASE_URL}/api/signup`,formData);
+      } catch (error) {
+        console.log(error);
+      }
+     
 
     
       console.log("Server Response:", response.data);
