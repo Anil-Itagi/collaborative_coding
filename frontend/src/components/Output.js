@@ -26,4 +26,4 @@ const Output = ({code}) => {
   )
 }
 
-export default Output
+export default Output;

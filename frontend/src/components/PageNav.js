@@ -16,7 +16,8 @@ function PageNav() {
     return (
          <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="nosifer-regular navbar-brand" href="/" >Code colab</a>
+          <a className="nosifer-regular navbar-brand" href="/" >Code colab</a>
+                   
         <button
           className="navbar-toggler"
           type="button"
@@ -29,9 +30,9 @@ function PageNav() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+                <Link className="nav-link" to="/">Home</Link>     
             </li>
               
             <li className="nav-item">
@@ -49,8 +50,7 @@ function PageNav() {
                   </li>
               }  
               <li className="nav-item">
-              {isAuthenticated?    <Link className="nav-link" to="/home">Join meeting</Link>:""}
-         
+              {isAuthenticated?    <Link className="nav-link" to="/home">Join meeting</Link>:""}         
             </li>
           </ul>
         </div>
