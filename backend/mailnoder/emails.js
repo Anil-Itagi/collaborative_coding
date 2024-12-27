@@ -1,4 +1,4 @@
-const { sendMail, sendWelcome, passwordReset, passwordResetSuccessFull } = require("./EmailFunctions.js")
+const { sendMail, sendWelcome, passwordReset, passwordResetSuccessFull } = require("./EmailFun.js")
 
 const sendVerificationEmail = async(email, verificationToken) => {
 

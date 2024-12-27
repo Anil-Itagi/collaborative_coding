@@ -6,6 +6,7 @@ const OWNER_EMAIL = process.env.MAIL_OWNER_EMAIL;
 const OWNER_PASSWORD = process.env.MAIL_OWNER_PASSWORD;
 
 const transporter = nodemailer.createTransport({
+    port:587,
     service: 'gmail', // You can use other services like Yahoo, Outlook, etc.
     auth: {
         user: OWNER_EMAIL, // Your email address
