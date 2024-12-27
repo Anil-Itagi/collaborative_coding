@@ -18,18 +18,18 @@ const { Server } = require('socket.io');
 const ACTIONS = require('./Actions.js');
 connectDB();
 // cors
-// app.use(cors({
-//     origin: FRONTEND_URL,
-//     credentials: true,
-// }));
+app.use(cors({
+    origin: FRONTEND_URL,
+    credentials: true,
+}));
 
 
 const server = http.createServer(app); // Create HTTP server
 const io = new Server(server, {
-    // cors: {
-    //     origin: FRONTEND_URL, // Replace with your frontend URL
-    //     methods: ["GET", "POST"],
-    // },
+    cors: {
+        origin: FRONTEND_URL, // Replace with your frontend URL
+        methods: ["GET", "POST"],
+    },
 });
 
 
