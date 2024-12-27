@@ -4,6 +4,7 @@ import {  loginSuccess } from "./signupAction";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
 import toast from 'react-hot-toast'
+import axios from 'axios'
 const BASE_URL = process.env.REACT_APP_BACKEND_URL;
 
 
@@ -24,18 +25,16 @@ function Login() {
         e.preventDefault();
         try {
           //  dispatch(loader()); // Start loader
-            const response = await fetch(`${BASE_URL}/api/login`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-            });
+            var response = {};
+           try {
+              response = await axios.post(`${BASE_URL}/api/login`,formData);
+             } catch (error) {
+              console.log(' hnj'+error);
+             }
            // dispatch(unLoader());
-            const data = await response.json();
-            if (response.ok) {
-              
-                   
-                 // Fractional value for 10 seconds
-              
+            const data = await response.data;
+            if (response.status) {        
+                 // Fractional value for 10 seconds            
                    Cookies.set('token', data.token, {
                     expires: 0.02, // 1 hour
                  // Only sent over HTTPS
@@ -43,7 +42,7 @@ function Login() {
                    });
                 toast.success(data.message || "Login successful!")
                 //alert(data.message || "Login successful!"); // Show alert
-                dispatch(loginSuccess(data.user)); // Update Redux state
+             //   dispatch(loginSuccess(data.user)); // Update Redux state
                 setSuccess(true);
                 setStatus("Login successful! Redirecting...");
                 navigate("/"); // Redirect to home

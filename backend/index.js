@@ -16,6 +16,7 @@ const FRONTEND_URL = process.env.FRONTEND_URL;
 
 const { Server } = require('socket.io');
 const ACTIONS = require('./Actions.js');
+
 connectDB();
 // cors
 app.use(cors({
@@ -25,6 +26,7 @@ app.use(cors({
 
 
 const server = http.createServer(app); // Create HTTP server
+
 const io = new Server(server, {
     cors: {
         origin: FRONTEND_URL, // Replace with your frontend URL
@@ -145,6 +147,6 @@ app.get('/', (req, res) => {
 })
 
 server.listen(PORT, () => {
-    // connectDB();
+
     console.log("server is running in the port", PORT);
 })
