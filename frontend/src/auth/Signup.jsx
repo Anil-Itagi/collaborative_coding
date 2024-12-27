@@ -68,31 +68,24 @@ function Signup() {
     
       console.log("Server Response:", response.data);
     
-      
-      // const data = await response.json();
-      // console.log(data);
-      // if (!response.ok) {
-      // console.log(response.ok);
-      //  }
-      // if (response.ok) {
-      //   dispatch(signupSuccess(data));
-      //   toast.success("Signup verification code sent successfully!");
-      //   navigate("/api/verify-email", { state: { email: formData.email } });
-      // } else {
-      //   dispatch(signupError(data.message || "Signup failed."));
-      //   setStatus(data.message || "Signup failed yaa")
-      //   setSuccess(true)
-      //   toast.error(data.message || "An error occurred.");
-      // }
+      const data = response.data;
+      if (response.status) {
+        toast.success("Signup verification code sent successfully!");
+        navigate("/api/verify-email", { state: { email: formData.email } });
+      }
+      else {
+        dispatch(signupError("Signup failed."));
+        setStatus(data.message+"dddd" || "Signup failed ")
+        setSuccess(true)
+        toast.error(data.message || "An error occurred.");
+      }
     } catch (error) {
       console.error("Error:", error);
       setStatus("Signup failed res",error)
       setSuccess(true)
       dispatch(signupError(error.message || "Unexpected error occurred."));
       toast.error("An unexpected error occurred. Please try again.");
-    } finally {
-      //dispatch(loader()); // Hide loader
-    }
+    } 
   };
 
   return (
