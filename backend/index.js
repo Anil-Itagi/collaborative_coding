@@ -16,7 +16,7 @@ const FRONTEND_URL = process.env.FRONTEND_URL;
 
 const { Server } = require('socket.io');
 const ACTIONS = require('./Actions.js');
-
+connectDB();
 // cors
 // app.use(cors({
 //     origin: FRONTEND_URL,
@@ -145,6 +145,6 @@ app.get('/', (req, res) => {
 })
 
 server.listen(PORT, () => {
-    connectDB();
+    // connectDB();
     console.log("server is running in the port", PORT);
 })
