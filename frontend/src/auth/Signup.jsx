@@ -55,6 +55,7 @@ function Signup() {
         body: JSON.stringify(formData),
       });
         
+      
       const data = await response.json();
       console.log(data);
       if (!response.ok) {
