@@ -51,8 +51,8 @@ const EditorPage = () => {
         });
         // Add socket error listeners
         
-        socketRef.current.on('connect_error', handleError);
-        socketRef.current.on('connect_failed', handleError);
+        // socketRef.current.on('connect_error', handleError);
+        // socketRef.current.on('connect_failed', handleError);
     
         // Add a listener for disconnect events
         socketRef.current.on('disconnect', (reason) => {
@@ -136,18 +136,7 @@ const EditorPage = () => {
     }
   }
 
-  //functio leaveroom
-
-  // const leaveRoom = () => {
-  //   reactNavigate('/');
-  // }
-
-  //   const stopMeeting = () => {
-  //   if (zpRef.current) {
-  //     zpRef.current.destroy(); // Destroy the ZegoUIKitPrebuilt instance
-  //     console.log("Left the room and destroyed the instance successfully.");
-  //   }
-  // };
+  
   const leaveRoom = () => {
     reactNavigate('/');
     //stopMeeting();
