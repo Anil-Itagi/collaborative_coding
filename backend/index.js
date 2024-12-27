@@ -18,18 +18,18 @@ const { Server } = require('socket.io');
 const ACTIONS = require('./Actions.js');
 
 // cors
-app.use(cors({
-    origin: FRONTEND_URL,
-    credentials: true,
-}));
+// app.use(cors({
+//     origin: FRONTEND_URL,
+//     credentials: true,
+// }));
 
 
 const server = http.createServer(app); // Create HTTP server
 const io = new Server(server, {
-    cors: {
-        origin: FRONTEND_URL, // Replace with your frontend URL
-        methods: ["GET", "POST"],
-    },
+    // cors: {
+    //     origin: FRONTEND_URL, // Replace with your frontend URL
+    //     methods: ["GET", "POST"],
+    // },
 });
 
 
@@ -40,10 +40,7 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 4000;
 
 
-app.get('/', (req, res) => {
 
-    res.send("Helld world");
-})
 
 
 app.post('/run-code', (req, res) => {
@@ -141,6 +138,11 @@ app.use(express.json()) // allows us to inconing reque fiorm json
 app.use(cookieParser());
 
 app.use("/api", router);
+
+app.get('/', (req, res) => {
+
+    res.send("Helld world");
+})
 
 server.listen(PORT, () => {
     connectDB();
