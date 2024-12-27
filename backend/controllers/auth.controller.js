@@ -17,15 +17,16 @@ const BASE_FRONTED_URL = process.env.FRONTEND_URL;
 
 const signup = async(req, res) => {
     const { email, password, name } = req.body;
-    console.log(email, password, name);
+    console.log(email, password);
     // return res.status(400).json({ success: false, message: "User already exists" })
     try {
 
         //const { email, username, password } = req.body;
 
-
+      
         // Create a new user
-        const newUser = new User({ email, username, password });
+        const newUser = new User({ email, name, password });
+        
         await newUser.save();
 
         res.status(201).json({ message: "User created successfully" });
