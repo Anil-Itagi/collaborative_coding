@@ -17,19 +17,48 @@ const BASE_FRONTED_URL = process.env.FRONTEND_URL;
 
 const signup = async(req, res) => {
     const { email, password, name } = req.body;
-    console.log(email, password);
-    // return res.status(400).json({ success: false, message: "User already exists" })
+    console.log(email,password,name);
+    
     try {
 
-        //const { email, username, password } = req.body;
+        if (!email || !password || !name) {
+            throw new Error("All feilds are required");
+        }
+        const userAlreadyExists = await User.findOne({ email });
+        if (userAlreadyExists) {
+            return res.status(400).json({ success: false, message: "User already exists" })
+        }
 
-      
-        // Create a new user
-        const newUser = new User({ email, name, password });
+        const hashedPassword = await bcryptjs.hash(password, 10);
+
+        const verificationToken = Math.floor(100000 + Math.random() * 900000).toString();
+
+        const user = new User({
+            email,
+            password: hashedPassword,
+            name,
+            verificationToken,
+            verificationTokenExpiresAt: Date.now() + 24 * 60 * 60 * 1000,
+        })
+        // const newUser = new User({ email, name, password });
         
-        await newUser.save();
+        // await newUser.save();
 
-        res.status(201).json({ message: "User created successfully" });
+        // res.status(201).json({ message: "User created successfully" });
+        await user.save();
+        generateTokenAndSetCookie(res, user._id);
+        sendVerificationEmail(user.email, verificationToken);
+        
+        console.log("email send successfull");
+        res.status(201).json({
+            success: true,
+            message: "User created successfully",
+            user: {
+
+                ...user._doc,
+                password: undefined,
+            },
+        });
     } catch (error) {
         return res.status(400).json({ success: false, message: error.message });
     }
