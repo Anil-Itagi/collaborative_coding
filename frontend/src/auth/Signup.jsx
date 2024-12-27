@@ -65,6 +65,7 @@ function Signup() {
       // });
       const response = await axios.post(`${BASE_URL}/api/signup`,formData);
 
+    
       console.log("Server Response:", response.data);
     
       
