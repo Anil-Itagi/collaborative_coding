@@ -25,7 +25,7 @@ function Signup() {
 
   const dispatch = useDispatch();
   const { user} = useSelector((state) => state.signup);
-  console.log(user?.status || "error");
+
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
