@@ -4,6 +4,7 @@ import { signupSuccess, signupError } from "./signupAction";
 import { Link, useNavigate } from "react-router-dom";
 import "./signup.css";
 import toast from 'react-hot-toast'
+import  axios  from 'axios'
 const BASE_URL = process.env.REACT_APP_BACKEND_URL; 
 // const BASE_URL = "https://collaborativecoding-server.vercel.app"
 ; 
@@ -17,8 +18,6 @@ function Signup() {
     name: "",
     email: "",
     address: "",
-    country: "India",
-    state: "Karnataka",
     password: "",
     repassword: "",
     isVerified: false,
@@ -46,34 +45,46 @@ function Signup() {
 
     try {
       //dispatch(loader()); // Show loader
-       console.log(BASE_URL);
-      const response = await fetch(`${BASE_URL}/api/signup`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      //  console.log(BASE_URL);
+      // const response = await fetch(`${BASE_URL}/api/signup`, {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(formData),
+      // });
         
+    //   const response=await axios.post(`${BASE_URL}/api/signup`, formData)
+    //  .then(response => console.log(response.data))
+    //    .catch(thrown => {
+    //   if (axios.isCancel(thrown)) {
+    //   console.log('Request canceled:', thrown.message);
+    // } else {
+    //   console.error(thrown);
+    // }
+      // });
+      const response = await axios.post(`${BASE_URL}/api/signup`,formData);
+
+      console.log("Server Response:", response.data);
       
-      const data = await response.json();
-      console.log(data);
-      if (!response.ok) {
-      console.log(response.ok);
-       }
-      if (response.ok) {
-        dispatch(signupSuccess(data));
-        toast.success("Signup verification code sent successfully!");
-        navigate("/api/verify-email", { state: { email: formData.email } });
-      } else {
-        dispatch(signupError(data.message || "Signup failed."));
-        setStatus(data.message || "Signup failed yaa")
-        setSuccess(true)
-        toast.error(data.message || "An error occurred.");
-      }
+      // const data = await response.json();
+      // console.log(data);
+      // if (!response.ok) {
+      // console.log(response.ok);
+      //  }
+      // if (response.ok) {
+      //   dispatch(signupSuccess(data));
+      //   toast.success("Signup verification code sent successfully!");
+      //   navigate("/api/verify-email", { state: { email: formData.email } });
+      // } else {
+      //   dispatch(signupError(data.message || "Signup failed."));
+      //   setStatus(data.message || "Signup failed yaa")
+      //   setSuccess(true)
+      //   toast.error(data.message || "An error occurred.");
+      // }
     } catch (error) {
       console.error("Error:", error);
-      setStatus("Signup failed",error)
+      setStatus("Signup failed res",error)
       setSuccess(true)
       dispatch(signupError(error.message || "Unexpected error occurred."));
       toast.error("An unexpected error occurred. Please try again.");

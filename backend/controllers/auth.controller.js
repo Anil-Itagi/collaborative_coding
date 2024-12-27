@@ -17,6 +17,7 @@ const BASE_FRONTED_URL = process.env.FRONTEND_URL;
 
 const signup = async(req, res) => {
     const { email, password, name } = req.body;
+    console.log(email,password,name);
     try {
 
         if (!email || !password || !name) {
