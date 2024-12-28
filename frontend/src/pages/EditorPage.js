@@ -51,8 +51,8 @@ const EditorPage = () => {
         });
         // Add socket error listeners
         
-        socketRef.current.on('connect_error', handleError);
-        socketRef.current.on('connect_failed', handleError);
+        // socketRef.current.on('connect_error', handleError);
+        // socketRef.current.on('connect_failed', handleError);
     
         // Add a listener for disconnect events
         socketRef.current.on('disconnect', (reason) => {
