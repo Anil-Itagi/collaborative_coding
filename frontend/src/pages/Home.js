@@ -42,25 +42,60 @@ const Home = () => {
        }
     }  
   return (
-      <div className='homePage'>
+     <div className="homePage d-flex flex-column justify-content-center align-items-center vh-110" style={{backgroundColor:"#FDE49E"}}>
+
+    
+    <div className="form bg-white p-5 rounded shadow-lg">
+        <h4 className="label mb-4 text-center">Create or Join Room</h4>
         
-          Home page
-          <div className="form">
-              <h4 className='label'>Create a Room</h4>
-              <div className='input'>
-               
-                  <input type="text" className="input-box" placeholder='ROOM ID' value={roomId} onChange={(e)=> setRoomId(e.target.value)} onKeyUp={handleInputEnter}/>
-                  <input type="text" className="input-box" placeholder='USER NAME' value={userName} onChange={(e)=> setUserName(e.target.value)} onKeyUp={handleInputEnter} />
-                  <button className='btn joinBtn' onClick={joinRoom}>Join</button>
-                  <span className="createIfo">
-                      If you don't have an invite then create &nbsp; <a href="#" className='createNewBtn' onClick={createNewRoom}>New room</a>
-                  </span>
-              </div>
-          </div>
-          <footer className='footer'>
-              Built by ANI <a href="#">Contact</a>
-          </footer>
-      </div>
+        <div className="input">
+            {/* ROOM ID Input */}
+            <div className="mb-3">
+                <input 
+                    type="text" 
+                    className="form-control input-box" 
+                    placeholder="ROOM ID" 
+                    value={roomId} 
+                    onChange={(e) => setRoomId(e.target.value)} 
+                    onKeyUp={handleInputEnter} 
+                />
+            </div>
+            
+            {/* USER NAME Input */}
+            <div className="mb-4">
+                <input 
+                    type="text" 
+                    className="form-control input-box" 
+                    placeholder="USER NAME" 
+                    value={userName} 
+                    onChange={(e) => setUserName(e.target.value)} 
+                    onKeyUp={handleInputEnter} 
+                />
+            </div>
+
+            {/* Join Button */}
+            <div className="text-center">
+                <button className="btn bg-success btn-lg" onClick={joinRoom} style={{width:"100%"}}>
+                    Join
+                </button>
+            </div>
+
+            {/* Create Room Info */}
+            <div className="mt-3 text-center">
+                <span className="createIfo">
+                    Don't have an invite, create ? &nbsp;
+                    <a href="#" className="createNewBtn" onClick={createNewRoom}>New room</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    {/* Footer */}
+    <footer className="footer mt-5 text-center">
+        <p>Built by ANI </p>
+    </footer>
+</div>
+
   )
 }
 
