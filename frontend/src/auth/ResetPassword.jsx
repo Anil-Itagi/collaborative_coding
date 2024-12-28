@@ -55,26 +55,45 @@ function ResetPassword() {
     }
   };
     return (
-        <div className="container-fluid signup d-flex justify-content-center align-items-center vh-100 fs-6 sm:m-2">
-      <form onSubmit={handleSubmit} className="bg-primary-subtle p-3 rounded row">
-        
-        <div className="col-6">
+       <div className="container-fluid signup d-flex justify-content-center align-items-center vh-100" style={{backgroundColor:"#FDE49E"}}>
+    <div className="w-50">
+        <h2 className="text-center mb-4">Reset Your Password</h2> {/* Add heading */}
+        <form onSubmit={handleSubmit} className="bg-light p-5 rounded shadow-sm">
+            <div className="row">
+                <div className="col-12 mb-3">
+                    <label htmlFor="password" className="form-label">Password</label>
+                    <input 
+                        type="password" 
+                        className="form-control" 
+                        id="password" 
+                        name="password" 
+                        required 
+                        onChange={handleChange} 
+                    />
+                </div>
+
+                <div className="col-12 mb-3">
+                    <label htmlFor="repassword" className="form-label">Confirm Password</label>
+                    <input 
+                        type="password" 
+                        className="form-control" 
+                        id="repassword" 
+                        name="repassword" 
+                        required 
+                        onChange={handleChange} 
+                    />
+                </div>
+            </div>
+
             <div className="mb-3">
-            <label htmlFor="password" className="form-label">Password</label>
-            <input type="password" className="form-control" id="password" name="password" required onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="repassword" className="form-label">Confirm Password</label>
-            <input type="password" className="form-control" id="repassword" name="repassword" required onChange={handleChange} />
-          </div>
-         </div>
-       
-        <div className="mb-3">            
-           <Link to="/api/login" className="px-5"> Back </Link>
-        </div>
-        <button  className="btn btn-primary">Submit</button>
-     </form>      
+                <Link to="/api/login" className="px-5 text-decoration-none bg-danger btn">Back</Link>
+            </div>
+
+            <button className="btn btn-primary w-100 bg-success">Submit</button> {/* Full width button */}
+        </form>
     </div>
+</div>
+
     )
 }
 export default ResetPassword;

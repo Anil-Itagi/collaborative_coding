@@ -97,47 +97,93 @@ function Signup() {
   return (
 
     
-    <div className="container-fluid signup1 d-flex justify-content-center align-items-center vh-100 fs-6 sm:m-2">
-      <form onSubmit={handleSubmit} className="bg-primary-subtle p-3 rounded row">
-       
-          {success && (
-                  <p style={{color:'red'}}>
-           {status}
-                 </p>
-          )}
-        <div className="col-6">
-          <div className="mb-3">
-            <label htmlFor="name" className="form-label">Name</label>
-            <input type="text" className="form-control" id="name" name="name" required onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email address</label>
-            <input type="email" className="form-control" id="email" name="email" required onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="address" className="form-label">Address</label>
-            <input type="text" className="form-control" id="address" name="address" required onChange={handleChange} />
-          </div>
-           <div className="mb-3 mt-5">            
-           <Link to="/api/login" className="px-5">&larr;   Back </Link>
-          </div>
-       
-        </div>
-        <div className="col-6">
-             
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label">Password</label>
-            <input type="password" className="form-control" id="password" name="password" required onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="repassword" className="form-label">Confirm Password</label>
-            <input type="password" className="form-control" id="repassword" name="repassword" required onChange={handleChange} />
-          </div>
-        
-        </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
+   <div className="container-fluid signup1 d-flex justify-content-center align-items-center vh-100 fs-6 p-3"  style={{backgroundColor:"#FDE49E"}}>
+  <form onSubmit={handleSubmit} className="bg-light p-4 rounded shadow-lg row w-75">
+    <h2 className="text-center mb-4 fw-bold">Create New Account</h2>
+
+    {success && (
+      <p style={{ color: "red" }} className="text-center">
+        {status}
+      </p>
+    )}
+
+    <div className="col-md-6">
+      <div className="mb-3">
+        <label htmlFor="name" className="form-label fw-bold">Name</label>
+        <input
+          type="text"
+          className="form-control"
+          id="name"
+          name="name"
+          required
+          onChange={handleChange}
+          placeholder="Enter your full name"
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="email" className="form-label fw-bold">Email Address</label>
+        <input
+          type="email"
+          className="form-control"
+          id="email"
+          name="email"
+          required
+          onChange={handleChange}
+          placeholder="Enter your email"
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="address" className="form-label fw-bold">Address</label>
+        <input
+          type="text"
+          className="form-control"
+          id="address"
+          name="address"
+          required
+          onChange={handleChange}
+          placeholder="Enter your address"
+        />
+      </div>
+      <div className="mb-3 mt-5">
+            <Link to="/api/login" className="btn btn-link text-decoration-none " style={{ color: "white",backgroundColor:"green"}}>
+          &larr; Back
+        </Link>
+      </div>
     </div>
+
+    <div className="col-md-6">
+      <div className="mb-3">
+        <label htmlFor="password" className="form-label fw-bold">Password</label>
+        <input
+          type="password"
+          className="form-control"
+          id="password"
+          name="password"
+          required
+          onChange={handleChange}
+          placeholder="Enter your password"
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="repassword" className="form-label fw-bold">Confirm Password</label>
+        <input
+          type="password"
+          className="form-control"
+          id="repassword"
+          name="repassword"
+          required
+          onChange={handleChange}
+          placeholder="Confirm your password"
+        />
+      </div>
+    </div>
+
+    <div className="text-center">
+      <button type="submit" className="btn px-5 mt-3" style={{ color: "white",backgroundColor:"green"}}>Submit</button>
+    </div>
+  </form>
+</div>
+
   );
 }
 

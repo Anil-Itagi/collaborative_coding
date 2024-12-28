@@ -53,26 +53,36 @@ function ForgotPassword() {
     }
   };
     return (
-        <div className="container-fluid signup d-flex justify-content-center align-items-center vh-100 fs-6 sm:m-2">
-      <form onSubmit={handleSubmit} className="bg-primary-subtle p-3 rounded row">
-        <p style={{ color: "red" }}>{!success ? status : ""}</p>
-        <p style={{ color: "green" }}>{success ? status : ""}</p>
-       
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email address</label>
-            <input type="email" className="form-control" id="email" name="email" required onChange={handleChange} />
-          </div>
-         
-          
-       
+       <div className="container-fluid signup d-flex justify-content-center align-items-center vh-100" style={{backgroundColor:"#FDE49E"}}>
+    <div className="w-50">
+        <h2 className="text-center mb-4">Forget Password</h2> {/* Add a heading for the page */}
+        <form onSubmit={handleSubmit} className="bg-light p-5 rounded shadow-sm">
+            <p style={{ color: "red" }}>{!success ? status : ""}</p>
+            <p style={{ color: "green" }}>{success ? status : ""}</p>
+
             <div className="mb-3">
-                    
-           <Link to="/api/login" className="px-5">  Back </Link>
-        
-                </div>
-        <button  className="btn btn-primary">Submit</button>
-     </form>      
+                <label htmlFor="email" className="form-label">Email address</label>
+                <input 
+                    type="email" 
+                    className="form-control" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    onChange={handleChange} 
+                />
+            </div>
+
+            <div className="mb-3">
+                <Link to="/api/login" className="px-5 text-decoration-none btn bg-danger">
+                      &larr; Back
+                </Link>
+            </div>
+
+            <button className="btn btn-primary w-100">Submit</button> {/* Full width button */}
+        </form>
     </div>
+</div>
+
     )
 }
 export default ForgotPassword;

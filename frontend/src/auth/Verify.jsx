@@ -55,20 +55,28 @@ function Verify() {
   };
 
     return (
-        <div className="container-fluid  d-flex justify-content-center align-items-center vh-100">
+       <div className="container-fluid d-flex justify-content-center align-items-center vh-100" style={{backgroundColor:"#FDE49E"}}>
+    <div className="w-50">
+        <h2 className="text-center mb-4">Verify Your Account</h2> {/* Add a header */}
+        <form onSubmit={handleSubmit} className="bg-light p-5 rounded shadow-sm">
+            <p style={{ color: "red" }}>{!success ? status : ""}</p>
+            <p style={{ color: "green" }}>{success ? status : ""}</p>
+            <div className="mb-3">
+                <label htmlFor="code" className="form-label">Enter the verification code</label>
+                <input 
+                    type="number" 
+                    className="form-control" 
+                    id="code" 
+                    name="code" 
+                    onChange={handleChange} 
+                    required 
+                />
+            </div>
+            <button className="btn btn-success w-100 bg-success">Verify</button> {/* Full width button */}
+        </form>
+    </div>
+</div>
 
-        <form onSubmit={handleSubmit} className="bg-dark-subtle p-5 rounded">
-        <p style={{ color: "red" }}>{!success? status : ""}</p>
-        <p style={{ color: "green" }}>{ success?status:""}</p>
-      <div >
-           <div className="mb-3">
-              <label htmlFor="code" className="form-label">Enter the verification code</label>
-              <input type="number" className="form-control" id="name" name="code" onChange={handleChange}required />
-            </div> 
-        </div>
-        <button className="btn bg-success d-flex justify-content-center" > Verify</button>
-    </form>
-        </div>
     )
 }
 

@@ -61,50 +61,56 @@ function Login() {
     };
 
     return (
-        <div className="container-fluid signup1 d-flex justify-content-center align-items-center vh-100 fs-6 sm:m-2">
-            <form onSubmit={handleSubmit} className="bg-primary-subtle p-3 rounded row">
-                <div className="col-12">
-                    {status && (
-                        <p style={{ color: success ? "green" : "red" }}>{status}</p>
-                    )}
-                    <div className="mb-3">
-                        <label htmlFor="email" className="form-label">
-                            Email address
-                        </label>
-                        <input
-                            type="email"
-                            className="form-control"
-                            id="email"
-                            name="email"
-                            required
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="password" className="form-label">
-                            Password
-                        </label>
-                        <input
-                            type="password"
-                            className="form-control"
-                            id="password"
-                            name="password"
-                            required
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className="mb-3">
-                        <Link to="/api/signup" className="px-5">
-                            New User
-                        </Link>
-                        <Link to="/api/forgot-password" className="px-5">
-                            Forgot Password
-                        </Link>
-                    </div>
-                </div>
-                <button className="btn btn-primary">Submit</button>
-            </form>
-        </div>
+        <div className="container-fluid signup1 d-flex justify-content-center align-items-center vh-100 fs-6 p-3" style={{backgroundColor:"#FDE49E"}}>
+  <form onSubmit={handleSubmit} className="bg-light p-4 rounded shadow-lg row w-75">
+    <h2 className="text-center mb-4 fw-bold ">Login</h2>
+
+    {status && (
+      <p style={{ color: success ? "green" : "red" }} className="text-center">
+        {status}
+      </p>
+    )}
+
+    <div className="col-12">
+      <div className="mb-3">
+        <label htmlFor="email" className="form-label fw-bold">Email address</label>
+        <input
+          type="email"
+          className="form-control"
+          id="email"
+          name="email"
+          required
+          onChange={handleChange}
+          placeholder="Enter your email"
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="password" className="form-label fw-bold">Password</label>
+        <input
+          type="password"
+          className="form-control"
+          id="password"
+          name="password"
+          required
+          onChange={handleChange}
+          placeholder="Enter your password"
+        />
+      </div>
+      <div className="mb-3" style={{display:"flex",justifyContent:"space-between"}}>
+        <Link to="/api/signup" className="btn btn-link text-decoration-none text-white bg-success mx-1">
+          New User? Sign Up
+        </Link>
+        <Link to="/api/forgot-password" className="btn btn-link text-decoration-none text-white bg-success mx-1">
+          Forgot Password?
+        </Link>
+      </div>
+    </div>
+    
+    <div className="text-center">
+      <button className="btn btn-primary px-5 mt-3 bg-danger">Submit</button>
+    </div>
+  </form>
+</div>
     );
 }
 

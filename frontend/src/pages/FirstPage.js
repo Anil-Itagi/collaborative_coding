@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import i from "../images/colab.png"
 import syntax from "../images/syntax.jpg";
 import collaboration from "../images/collaboration.jpg"
-import vd from '../images/vd coference.png'
+import vd from '../images/conference.jpg'
 import Cookies from 'js-cookie';
 import DemoVideo from "../images/vd demo.mp4"
 import { useLocation} from "react-router-dom";

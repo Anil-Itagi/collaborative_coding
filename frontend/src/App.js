@@ -57,7 +57,7 @@ function App() {
     <>
       <div>
         <Toaster
-          position="top-right"
+          position="top-center"
           toastOptions={{
             success: {
               primary:'#4aed88',
