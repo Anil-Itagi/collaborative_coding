@@ -100,7 +100,7 @@ const EditorPage = () => {
         console.error('Error initializing socket:', error);
       }
     };
-
+    
     init();
 
     //listeing for joined events
@@ -117,7 +117,7 @@ const EditorPage = () => {
         socketRef.current = null;
       }
     };
-  }, []);
+  }, [clients]);
 
 
   if (!location.state) {
