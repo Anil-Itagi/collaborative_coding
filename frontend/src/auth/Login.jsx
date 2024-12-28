@@ -49,7 +49,7 @@ function Login() {
             } else {
                 // On error
                 setSuccess(false);
-                setStatus(data.message || "Invalid email or password");
+                setStatus(data.message|| "Invalid email or password");
                 toast.error(data.message || "Invalid email or password");
             }
         } catch (error) {
@@ -57,9 +57,7 @@ function Login() {
             setStatus("An error occurred. Please try again later.");
             setSuccess(false);
             toast.error("An error occurred. Please try again later.");
-        } finally {
-           // dispatch(unLoader()); // Stop loader
-        }
+        } 
     };
 
     return (
