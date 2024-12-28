@@ -14,7 +14,7 @@ function PageNav() {
    }, [location]);
    
     return (
-         <nav className="navbar navbar-expand-lg bg-body-tertiary">
+         <nav className="navbar navbar-expand-lg" style={{backgroundColor:"#6DC5D1"}}>
       <div className="container-fluid">
           <a className="nosifer-regular navbar-brand" href="/" >Code colab</a>
                    
