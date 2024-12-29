@@ -75,22 +75,22 @@ function Signup() {
       console.log("Server Response:", response.data);
     
       const data = response.data;
-      if (response.status) {
+      if (data?.success) {
         toast.success("Signup verification code sent successfully!");
         navigate("/api/verify-email", { state: { email: formData.email } });
       }
       else {
         dispatch(signupError("Signup failed."));
-        setStatus(data.message+"dddd" || "Signup failed ")
-        setSuccess(true)
+        // setStatus(data.message+"dd || "Signup failed ")
+        // setSuccess(true)
         toast.error(data.message || "An error occurred.");
       }
     } catch (error) {
       console.error("Error:", error);
-      setStatus("Signup failed res",error)
-      setSuccess(true)
+      // setStatus("Signup failed res",error)
+      // setSuccess(true)
       dispatch(signupError(error.message || "Unexpected error occurred."));
-      toast.error("An unexpected error occurred. Please try again.");
+      toast.error("An unexpected error occurred. Please try again."+error.message);
     } 
   };
 
@@ -145,7 +145,7 @@ function Signup() {
         />
       </div>
       <div className="mb-3 mt-5">
-            <Link to="/api/login" className="btn btn-link text-decoration-none " style={{ color: "white",backgroundColor:"green"}}>
+            <Link to="/api/login" className="btn btn-link text-decoration-none text-white bg-success" >
           &larr; Back
         </Link>
       </div>
@@ -179,7 +179,7 @@ function Signup() {
     </div>
 
     <div className="text-center">
-      <button type="submit" className="btn px-5 mt-3" style={{ color: "white",backgroundColor:"green"}}>Submit</button>
+      <button type="submit" className="btn px-5 mt-3 text-white bg-success">Submit</button>
     </div>
   </form>
 </div>
