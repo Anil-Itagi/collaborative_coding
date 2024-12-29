@@ -26,7 +26,7 @@ const FirstPage = ({ isAuthenticated, setIsAuthenticated }) => {
               integrated video conferencing solution. Perfect for teams and
               learners alike!
             </p>
-            <a href="#features" className="btn btn-primary btn-lg">
+            <a href="#features" className="btn text-white btn-lg bg-dark">
               Explore Features
             </a>
           </div>

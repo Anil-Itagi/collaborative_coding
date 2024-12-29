@@ -34,23 +34,21 @@ function Login() {
            // dispatch(unLoader());
             const data = await response.data;
             if (response.status) {        
-                 // Fractional value for 10 seconds            
+                    
                    Cookies.set('token', data.token, {
                     expires: 0.02, // 1 hour
-                 // Only sent over HTTPS
+                   // Only sent over HTTPS
                    // sameSite: 'Strict',
                    });
-                toast.success(data.message || "Login successful!")
-                //alert(data.message || "Login successful!"); // Show alert
-             //   dispatch(loginSuccess(data.user)); // Update Redux state
+                toast.success( "Login successful!")
                 setSuccess(true);
                 setStatus("Login successful! Redirecting...");
                 navigate("/"); // Redirect to home
             } else {
                 // On error
                 setSuccess(false);
-                setStatus(data.message|| "Invalid email or password");
-                toast.error(data.message || "Invalid email or password");
+                setStatus("Invalid email or password");
+                toast.error("Invalid email or password");          
             }
         } catch (error) {
             console.error("Error:", error);
