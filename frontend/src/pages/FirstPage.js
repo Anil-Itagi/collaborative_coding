@@ -94,9 +94,9 @@ const FirstPage = ({ isAuthenticated, setIsAuthenticated }) => {
       </div>
       
 
-      <div id="video-section" class="text-center my-5">
-  <h2 class="mb-4">Demo Project Video</h2>
-  <p class="mb-4">
+      <div id="video-section" className="text-center my-5">
+  <h2 className="mb-4">Demo Project Video</h2>
+  <p className="mb-4">
     Watch this 20-second demo to understand how our project works.
   </p>
   <video width="640" height="360" controls>

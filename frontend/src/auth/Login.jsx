@@ -14,7 +14,7 @@ function Login() {
     const [formData, setFormData] = useState({ email: "", password: "" });
 
     const navigate = useNavigate();
-    const dispatch = useDispatch();
+   // const dispatch = useDispatch();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -32,8 +32,9 @@ function Login() {
               console.log(' hnj'+error);
              }
            // dispatch(unLoader());
-            const data = await response.data;
-            if (response.status) {        
+          const data = await response.data;
+          console.log(data);
+            if (data?.success) {        
                     
                    Cookies.set('token', data.token, {
                     expires: 0.02, // 1 hour
@@ -42,17 +43,16 @@ function Login() {
                    });
                 toast.success( "Login successful!")
                 setSuccess(true);
-                setStatus("Login successful! Redirecting...");
+               // setStatus("Login successful! Redirecting...");
                 navigate("/"); // Redirect to home
             } else {
                 // On error
                 setSuccess(false);
-                setStatus("Invalid email or password");
-                toast.error("Invalid email or password");          
+                toast.error(data?.message || "Invalid email or password");          
             }
         } catch (error) {
             console.error("Error:", error);
-            setStatus("An error occurred. Please try again later.");
+         //   setStatus("An error occurred. Please try again later.");
             setSuccess(false);
             toast.error("An error occurred. Please try again later.");
         } 
