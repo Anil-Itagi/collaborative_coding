@@ -4,7 +4,6 @@ import Home from './pages/Home';
 import EditorPage from './pages/EditorPage';
 import {Toaster} from 'react-hot-toast'
 import NotFound from './components/NotFound';
-import Cookies from 'js-cookie';
 import Login from "./auth/Login";
 import Signup from "./auth/Signup";
 import ForgotPassword from "./auth/ForgotPassword";
@@ -14,7 +13,7 @@ import Logout from "./auth/Logout";
 import Footer from './components/Footer';
 import PageNav from './components/PageNav';
 import FirstPage from './pages/FirstPage';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 
@@ -26,7 +25,6 @@ const Layout = () => (
     <Footer />
   </>
 );
-//console.log(Cookies.get('token'));
 
 function App() {
  

@@ -16,7 +16,7 @@ function PageNav() {
     return (
          <nav className="navbar navbar-expand-lg" style={{backgroundColor:"#6DC5D1"}}>
       <div className="container-fluid">
-          <a className="nosifer-regular navbar-brand" href="/" >Code colab</a>
+          <a className="nosifer-regular navbar-brand" href="/" >Code collab</a>
                    
         <button
           className="navbar-toggler"

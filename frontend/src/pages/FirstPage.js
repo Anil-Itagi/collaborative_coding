@@ -20,7 +20,7 @@ const FirstPage = ({ isAuthenticated, setIsAuthenticated }) => {
       <div className="container-fluid p-5"  >
         <div className="row align-items-center">
           <div className="col-lg-6 mb-4">
-            <h1>Welcome to CodeColab</h1>
+            <h1>Welcome to CodeCollab</h1>
             <p className="lead">
               Experience seamless real-time collaborative coding with an
               integrated video conferencing solution. Perfect for teams and
